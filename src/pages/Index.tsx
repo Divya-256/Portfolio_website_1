@@ -436,7 +436,6 @@ const PORTFOLIO_DATA = {
     { label: "Projects", href: "#projects" },
     { label: "Certifications", href: "#certifications" },
     { label: "Accomplishments", href: "#accomplishments" },
-    { label: "Contact", href: "#contact" },
   ]
 };
 

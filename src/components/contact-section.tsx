@@ -24,7 +24,7 @@ export function ContactSection({ contactInfo, className }: ContactSectionProps) 
     subject: "",
     message: ""
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,10 +35,13 @@ export function ContactSection({ contactInfo, className }: ContactSectionProps) 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Demo form submission - in a real app, you would send this to a server
+
+    // Construct mailto link
+    const mailtoUrl = `mailto:${contactInfo.email}?subject=${encodeURIComponent(formState.subject)}&body=${encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\n\n${formState.message}`)}`;
+
+    // Open mail client
     setTimeout(() => {
-      console.log("Form submitted:", formState);
+      window.location.href = mailtoUrl;
       setIsSubmitting(false);
       setFormState({
         name: "",
@@ -46,26 +49,26 @@ export function ContactSection({ contactInfo, className }: ContactSectionProps) 
         subject: "",
         message: ""
       });
-      alert("Message sent successfully!");
-    }, 1500);
+      alert("Opening your mail client to send the message!");
+    }, 1000);
   };
 
   return (
     <section id="contact" className={cn("py-20 px-6", className)}>
       <div className="container max-w-5xl">
-        <SectionHeading 
-          title="Contact Me" 
+        <SectionHeading
+          title="Contact Me"
           subtitle="Let's connect and discuss your project"
         />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <motion.div 
+          <motion.div
             className="glass-card p-8 rounded-2xl space-y-8 hover:glow transition-all duration-300"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            whileHover={{ 
+            whileHover={{
               y: -10,
               rotateY: 5,
               transition: { duration: 0.3 }
@@ -77,21 +80,21 @@ export function ContactSection({ contactInfo, className }: ContactSectionProps) 
                 I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
               </p>
             </div>
-            
+
             <div className="space-y-6">
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/10 transition-all duration-300"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   x: 10,
                   transition: { duration: 0.2 }
                 }}
-                animate={{ 
+                animate={{
                   y: [0, -5, 0],
                   transition: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                 }}
               >
-                <motion.div 
+                <motion.div
                   className="flex items-center justify-center h-12 w-12 rounded-full glass-button glow"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
@@ -100,28 +103,28 @@ export function ContactSection({ contactInfo, className }: ContactSectionProps) 
                 </motion.div>
                 <div>
                   <p className="text-sm text-muted-foreground">Mail me at</p>
-                  <a 
-                    href={`mailto:${contactInfo.email}`} 
+                  <a
+                    href={`mailto:${contactInfo.email}`}
                     className="font-medium text-primary hover:text-primary/80 transition-colors duration-300"
                   >
                     {contactInfo.email}
                   </a>
                 </div>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex items-center gap-4 p-4 glass rounded-xl hover:bg-white/10 transition-all duration-300"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
                   x: 10,
                   transition: { duration: 0.2 }
                 }}
-                animate={{ 
+                animate={{
                   y: [0, 5, 0],
                   transition: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }
                 }}
               >
-                <motion.div 
+                <motion.div
                   className="flex items-center justify-center h-12 w-12 rounded-full glass-button glow"
                   whileHover={{ rotate: -360 }}
                   transition={{ duration: 0.5 }}
@@ -135,51 +138,51 @@ export function ContactSection({ contactInfo, className }: ContactSectionProps) 
               </motion.div>
             </div>
           </motion.div>
-          
-          <motion.form 
+
+          <motion.form
             className="glass-card p-8 rounded-2xl space-y-6 hover:glow transition-all duration-300"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            whileHover={{ 
+            whileHover={{
               y: -10,
               rotateY: -5,
               transition: { duration: 0.3 }
             }}
           >
             <div className="space-y-4">
-              <Input 
-                placeholder="Your Name" 
+              <Input
+                placeholder="Your Name"
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
                 required
                 className="glass-input transition-all duration-300"
               />
-              
-              <Input 
-                type="email" 
-                placeholder="Your Email" 
+
+              <Input
+                type="email"
+                placeholder="Your Email"
                 name="email"
                 value={formState.email}
                 onChange={handleChange}
                 required
                 className="glass-input transition-all duration-300"
               />
-              
-              <Input 
-                placeholder="Subject" 
+
+              <Input
+                placeholder="Subject"
                 name="subject"
                 value={formState.subject}
                 onChange={handleChange}
                 required
                 className="glass-input transition-all duration-300"
               />
-              
-              <Textarea 
-                placeholder="Your Message" 
+
+              <Textarea
+                placeholder="Your Message"
                 name="message"
                 value={formState.message}
                 onChange={handleChange}
@@ -188,13 +191,13 @@ export function ContactSection({ contactInfo, className }: ContactSectionProps) 
                 className="glass-input resize-none transition-all duration-300"
               />
             </div>
-            
+
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isSubmitting}
                 className="w-full glass-button glow-hover text-white font-medium group transition-all duration-300"
               >
