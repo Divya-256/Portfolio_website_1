@@ -1,8 +1,8 @@
-import { Github, Linkedin, Twitter, Hash, Terminal } from "lucide-react";
+import { Github, Linkedin, Twitter, Hash, Terminal, Code2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface SocialLink {
-  platform: "github" | "linkedin" | "twitter" | "geeksforgeeks" | "hackerrank";
+  platform: "github" | "linkedin" | "twitter" | "geeksforgeeks" | "leetcode";
   url: string;
 }
 
@@ -25,8 +25,8 @@ export function Footer({ name, socials, className }: FooterProps) {
         return <Twitter className="h-5 w-5" />;
       case "geeksforgeeks":
         return <Hash className="h-5 w-5" />;
-      case "hackerrank":
-        return <Terminal className="h-5 w-5" />;
+      case "leetcode":
+        return <Code2 className="h-5 w-5" />;
       default:
         return null;
     }

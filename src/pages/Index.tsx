@@ -423,10 +423,10 @@ const PORTFOLIO_DATA = {
     location: "Kannur, Kerala, India",
   },
   socials: [
-    { platform: "linkedin" as const, url: "https://www.linkedin.com/in/divya-256" },
-    { platform: "github" as const, url: "https://github.com/divyasree256" },
-    { platform: "geeksforgeeks" as const, url: "https://auth.geeksforgeeks.org/user/divyasree256" },
-    { platform: "hackerrank" as const, url: "https://www.hackerrank.com/profile/divyasree256" },
+    { platform: "linkedin" as const, url: "https://www.linkedin.com/divya-256" },
+    { platform: "github" as const, url: "https://github.com/Divya-256/" },
+    { platform: "geeksforgeeks" as const, url: "https://www.geeksforgeeks.org/profile/256divy0kii" },
+    { platform: "leetcode" as const, url: "https://leetcode.com/u/256divyasree/" },
   ],
   navItems: [
     { label: "Home", href: "home" },
