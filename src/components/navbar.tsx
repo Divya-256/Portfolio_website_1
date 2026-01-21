@@ -18,18 +18,18 @@ export function Navbar({ name, navItems }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   const scrollToSection = (sectionId: string) => {
     setIsMenuOpen(false);
     if (sectionId === 'home') {
@@ -47,7 +47,7 @@ export function Navbar({ name, navItems }: NavbarProps) {
   };
 
   return (
-    <motion.header 
+    <motion.header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6",
         isScrolled ? "glass-nav shadow-2xl" : "bg-transparent"
@@ -57,13 +57,13 @@ export function Navbar({ name, navItems }: NavbarProps) {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="container flex items-center justify-between">
-        <button 
+        <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="text-xl font-bold gradient-text-primary transition-all duration-300 hover:scale-105 cursor-pointer"
         >
           {name}
         </button>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
@@ -81,23 +81,12 @@ export function Navbar({ name, navItems }: NavbarProps) {
               {item.label}
             </button>
           ))}
-          
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              className="glass-button glow-hover text-white font-medium transition-all duration-300"
-            >
-              Contact Me
-            </Button>
-          </motion.div>
+
         </nav>
-        
+
         {/* Mobile Menu Toggle */}
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           size="icon"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden"
@@ -109,7 +98,7 @@ export function Navbar({ name, navItems }: NavbarProps) {
           )}
         </Button>
       </div>
-      
+
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 glass-card py-4 px-6 flex flex-col gap-4 border-t border-white/10 shadow-2xl">
@@ -122,13 +111,7 @@ export function Navbar({ name, navItems }: NavbarProps) {
               {item.label}
             </button>
           ))}
-          
-          <Button 
-            onClick={() => scrollToSection("contact")}
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white mt-2"
-          >
-            Contact Me
-          </Button>
+
         </div>
       )}
     </motion.header>

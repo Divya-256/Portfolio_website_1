@@ -16,24 +16,26 @@ interface SkillsSectionProps {
   className?: string;
 }
 
+import { Terminal, Code, Database, Wrench, Cloud, Sparkles } from "lucide-react";
+
 const skillCategories = [
-  { key: "languages", title: "Languages", color: "from-blue-500 to-cyan-500" },
-  { key: "frameworks", title: "Frameworks", color: "from-purple-500 to-pink-500" },
-  { key: "databases", title: "Databases", color: "from-green-500 to-emerald-500" },
-  { key: "tools", title: "Tools", color: "from-orange-500 to-red-500" },
-  { key: "cloud", title: "Cloud & DevOps", color: "from-indigo-500 to-blue-500" },
-  { key: "other", title: "Other Skills", color: "from-teal-500 to-cyan-500" },
+  { key: "languages", title: "Languages", color: "bg-slate-900", icon: Code },
+  { key: "frameworks", title: "Frameworks", color: "bg-indigo-600", icon: Terminal },
+  { key: "databases", title: "Databases", color: "bg-indigo-500", icon: Database },
+  { key: "tools", title: "Tools", color: "bg-slate-800", icon: Wrench },
+  { key: "cloud", title: "Cloud & DevOps", color: "bg-blue-600", icon: Cloud },
+  { key: "other", title: "Other Skills", color: "bg-slate-700", icon: Sparkles },
 ];
 
 export function SkillsSection({ skills, className }: SkillsSectionProps) {
   return (
     <section id="skills" className={cn("py-20 px-6", className)}>
       <div className="container max-w-6xl">
-        <SectionHeading 
-          title="Technical Skills" 
+        <SectionHeading
+          title="Technical Skills"
           subtitle="My technical expertise across different domains"
         />
-        
+
         {/* Pentagon Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
@@ -45,14 +47,14 @@ export function SkillsSection({ skills, className }: SkillsSectionProps) {
               viewport={{ once: true }}
               className="glass-card rounded-2xl p-6 hover:glow transition-all duration-300"
             >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${category.color} flex items-center justify-center mb-4 glow`}>
-                <div className="w-6 h-6 bg-white rounded-md"></div>
+              <div className={`w-12 h-12 rounded-xl ${category.color} flex items-center justify-center mb-4`}>
+                <category.icon className="h-6 w-6 text-white" />
               </div>
-              
+
               <h3 className="text-xl font-semibold text-foreground mb-4">
                 {category.title}
               </h3>
-              
+
               <div className="flex flex-wrap gap-2">
                 {skills[category.key as keyof SkillsData]?.map((skill, skillIndex) => (
                   <motion.span
