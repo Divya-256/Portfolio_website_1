@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Code, Award, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import profileImage from "@/assets/photo.jpeg";
+import profileImage from "@/assets/photo.png";
 
 
 interface HeroSectionProps {
@@ -9,36 +9,32 @@ interface HeroSectionProps {
   title: string;
   description: string;
   scrollToProjects: () => void;
+  scrollToContact: () => void;
 }
 
-export function HeroSection({ name, title, description, scrollToProjects }: HeroSectionProps) {
+export function HeroSection({ name, title, description, scrollToProjects, scrollToContact }: HeroSectionProps) {
   const stats = [
-    { label: "Projects", value: "15+", color: "from-blue-500 to-cyan-500" },
-    { icon: Zap, label: "Experience", value: "2+ Years", color: "from-purple-500 to-pink-500" },
-    { icon: Award, label: "Certifications", value: "6+", color: "from-green-500 to-emerald-500" },
-    { icon: Users, label: "Technologies", value: "10+", color: "from-orange-500 to-red-500" }
+    { label: "Projects", value: "15+", color: "bg-slate-900" },
+    { icon: Zap, label: "Experience", value: "2+ Years", color: "bg-indigo-600" },
+    { icon: Award, label: "Certifications", value: "6+", color: "bg-indigo-600" },
+    { icon: Users, label: "Technologies", value: "10+", color: "bg-slate-800" }
   ];
 
   const techStack = ["React", "Node.js", "Flutter", "Java", "Python", "MongoDB"];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center py-20 px-6 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Subtle organic background elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-20 left-20 w-32 h-32 border border-primary/20 rounded-full"
-          animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-32 right-16 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg"
-          animate={{ rotate: -360, y: [-10, 10, -10] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-1/3 right-20 w-16 h-16 border-2 border-cyan-400/30 rotate-45"
-          animate={{ rotate: [45, 405], scale: [1, 1.2, 1] }}
-          transition={{ duration: 12, repeat: Infinity }}
+          className="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"
+          animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
@@ -64,11 +60,11 @@ export function HeroSection({ name, title, description, scrollToProjects }: Hero
                 >
                   <div className="flex items-center gap-3">
                     {Icon ? (
-                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${stat.color} flex items-center justify-center glow`}>
+                      <div className={`w-10 h-10 rounded-lg ${stat.color} flex items-center justify-center`}>
                         <Icon className="h-5 w-5 text-white" />
                       </div>
                     ) : (
-                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${stat.color} flex items-center justify-center glow`}>
+                      <div className={`w-10 h-10 rounded-lg ${stat.color} flex items-center justify-center`}>
                         <span className="text-white font-bold text-xs">PRJ</span>
                       </div>
                     )}
@@ -103,34 +99,21 @@ export function HeroSection({ name, title, description, scrollToProjects }: Hero
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <motion.div
-                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden glass-card glow"
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 border-2 border-slate-100 shadow-xl bg-white"
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img
-                  src={profileImage}
-                  alt="Divyasree M"
-                  className="w-full h-full object-cover top-8"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+                <div className="w-full h-full rounded-full overflow-hidden border border-slate-200">
+                  <img
+                    src={profileImage}
+                    alt="Divyasree M"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </motion.div>
             </motion.div>
 
-            <div className="glass-card p-12 rounded-3xl glow relative overflow-hidden">
-              {/* Animated background pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary via-purple-500 to-pink-500"
-                  animate={{
-                    background: [
-                      "linear-gradient(45deg, #8b5cf6, #a855f7, #c084fc)",
-                      "linear-gradient(135deg, #c084fc, #8b5cf6, #a855f7)",
-                      "linear-gradient(225deg, #a855f7, #c084fc, #8b5cf6)"
-                    ]
-                  }}
-                  transition={{ duration: 5, repeat: Infinity }}
-                />
-              </div>
+            <div className="p-8 md:p-12 rounded-[2.5rem] bg-white border border-slate-100 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
 
               <div className="relative z-10 space-y-8">
                 <motion.div
@@ -178,7 +161,7 @@ export function HeroSection({ name, title, description, scrollToProjects }: Hero
                     <Button
                       onClick={scrollToProjects}
                       size="lg"
-                      className="group glass-button glow-hover text-white font-medium px-8 py-4 rounded-full"
+                      className="bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 font-semibold px-8 py-6 rounded-full transition-all duration-300"
                     >
                       View My Work
                       <ArrowDown className="ml-2 h-4 w-4" />
@@ -189,11 +172,20 @@ export function HeroSection({ name, title, description, scrollToProjects }: Hero
                       asChild
                       size="lg"
                       variant="outline"
-                      className="glass-button text-white font-medium px-8 py-4 rounded-full"
+                      className="border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 font-semibold px-8 py-6 rounded-full transition-all duration-300"
                     >
                       <a href="/Resume.pdf" download="Divyasree_M_Resume.pdf">
                         Download Resume
                       </a>
+                    </Button>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      onClick={scrollToContact}
+                      size="lg"
+                      className="bg-indigo-600 text-white hover:bg-indigo-700 shadow-xl shadow-indigo-600/20 font-semibold px-8 py-6 rounded-full transition-all duration-300"
+                    >
+                      Contact Me
                     </Button>
                   </motion.div>
                 </motion.div>
@@ -209,19 +201,18 @@ export function HeroSection({ name, title, description, scrollToProjects }: Hero
             transition={{ duration: 1, delay: 0.8 }}
           >
             <motion.div
-              className="glass-card p-6 rounded-xl hover:glow transition-all duration-300"
-              whileHover={{ scale: 1.02, rotateY: 5 }}
+              className="bg-white border border-slate-100 p-6 rounded-2xl shadow-xl shadow-slate-200/50 transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <h3 className="text-lg font-semibold gradient-text-primary mb-4">Tech Stack</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">Tech Stack</h3>
               <div className="grid grid-cols-2 gap-2">
                 {techStack.map((tech, index) => (
                   <motion.div
                     key={tech}
-                    className="glass bg-primary/20 text-primary px-2 py-1 rounded-lg text-xs text-center border border-primary/30"
-                    initial={{ opacity: 0, scale: 0 }}
+                    className="bg-slate-50 text-slate-800 px-2 py-1.5 rounded-lg text-[10px] font-semibold text-center border border-slate-200/50 shadow-sm"
+                    initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                   >
                     {tech}
                   </motion.div>
@@ -230,30 +221,28 @@ export function HeroSection({ name, title, description, scrollToProjects }: Hero
             </motion.div>
 
             <motion.div
-              className="glass-card p-6 rounded-xl hover:glow transition-all duration-300"
-              whileHover={{ scale: 1.02, rotateY: -5 }}
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="bg-white border border-slate-100 p-6 rounded-2xl shadow-xl shadow-slate-200/50 transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <h3 className="text-lg font-semibold gradient-text-primary mb-4">Status</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-muted-foreground">Available for work</span>
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">Status</h3>
+              <div className="space-y-3 text-sm font-medium">
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.4)]"></div>
+                  <span className="text-slate-600">Available for work</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                  <span className="text-muted-foreground">Learning new tech</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.4)]"></div>
+                  <span className="text-slate-600">Learning new tech</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                  <span className="text-muted-foreground">Building projects</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 bg-indigo-500 rounded-full shadow-[0_0_8px_rgba(99,102,241,0.4)]"></div>
+                  <span className="text-slate-600">Building projects</span>
                 </div>
               </div>
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </div >
 
       <motion.button
         className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
@@ -272,6 +261,6 @@ export function HeroSection({ name, title, description, scrollToProjects }: Hero
           <ArrowDown className="h-6 w-6 text-primary" />
         </div>
       </motion.button>
-    </section>
+    </section >
   );
 }

@@ -24,11 +24,11 @@ export function ExperienceSection({ experiences, className }: ExperienceSectionP
   return (
     <section id="experience" className={cn("py-20 px-6", className)}>
       <div className="container max-w-4xl">
-        <SectionHeading 
-          title="Work Experience" 
+        <SectionHeading
+          title="Work Experience"
           subtitle="My professional journey and roles"
         />
-        
+
         <div className="space-y-12">
           {experiences.map((exp, index) => (
             <motion.div
@@ -42,10 +42,10 @@ export function ExperienceSection({ experiences, className }: ExperienceSectionP
               <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 md:gap-8">
                 {/* Timeline line */}
                 <div className="hidden md:block absolute left-1/4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-purple-500 -translate-x-1/2" />
-                
+
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-1/4 top-0 w-4 h-4 rounded-full bg-gradient-to-r from-primary to-purple-500 -translate-x-1/2 glow" />
-                
+
                 {/* Time period */}
                 <div className="hidden md:block">
                   <div className="sticky top-24 space-y-2">
@@ -59,9 +59,9 @@ export function ExperienceSection({ experiences, className }: ExperienceSectionP
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Experience details */}
-                <motion.div 
+                <motion.div
                   className="glass-card rounded-2xl p-6 hover:glow transition-all duration-300"
                   whileHover={{ y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
@@ -73,29 +73,29 @@ export function ExperienceSection({ experiences, className }: ExperienceSectionP
                     <MapPin className="mr-2 h-4 w-4 text-muted-foreground" />
                     <span className="text-sm text-muted-foreground">{exp.location}</span>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
-                    <div className="mt-1 p-3 rounded-xl glass-button glow">
-                      <Briefcase className="h-5 w-5 text-white" />
+                    <div className="mt-1 p-3 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
+                      <Briefcase className="h-5 w-5 text-indigo-600" />
                     </div>
                     <div className="space-y-1">
-                      <h3 className="text-xl font-semibold text-foreground">{exp.role}</h3>
-                      <p className="text-lg font-medium gradient-text-primary">{exp.company}</p>
+                      <h3 className="text-xl font-semibold text-slate-900">{exp.role}</h3>
+                      <p className="text-lg font-medium text-indigo-600">{exp.company}</p>
                     </div>
                   </div>
-                  
-                  <p className="mt-4 text-muted-foreground">
+
+                  <p className="mt-4 text-slate-600 leading-relaxed">
                     {exp.description}
                   </p>
-                  
+
                   {exp.achievements.length > 0 && (
                     <div className="mt-4">
-                      <h4 className="text-sm font-semibold mb-2">Key Achievements:</h4>
-                      <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground pl-2">
+                      <h4 className="text-sm font-semibold text-slate-900 mb-2">Key Achievements:</h4>
+                      <ul className="list-disc list-inside space-y-2 text-sm text-slate-600 pl-2">
                         {exp.achievements.map((achievement, i) => (
-                          <motion.li 
+                          <motion.li
                             key={i}
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 + (i * 0.1) }}
                             viewport={{ once: true }}
@@ -106,17 +106,17 @@ export function ExperienceSection({ experiences, className }: ExperienceSectionP
                       </ul>
                     </div>
                   )}
-                  
-                  <div className="mt-4 flex flex-wrap gap-2">
+
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {exp.technologies.map((tech, i) => (
                       <motion.div
                         key={i}
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: 0.5 + (i * 0.05) }}
                         viewport={{ once: true }}
                       >
-                        <Badge className="glass bg-primary/20 text-primary border-primary/30 hover:bg-primary/30 transition-all duration-300">
+                        <Badge className="bg-slate-100 text-slate-700 border-slate-200/60 hover:bg-slate-200 transition-colors duration-200 shadow-xs">
                           {tech}
                         </Badge>
                       </motion.div>

@@ -104,19 +104,19 @@ export function ProjectCard({
         <CardContent className="flex-1 pb-4">
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <Badge key={tag} className="glass bg-primary/20 text-primary border-primary/30 hover:bg-primary/30 transition-all duration-300 text-[10px] py-0 px-2">
+              <Badge key={tag} className="bg-slate-100 text-slate-700 border-slate-200/60 hover:bg-slate-200 transition-colors duration-200 text-[10px] py-0.5 px-2 font-semibold shadow-xs">
                 {tag}
               </Badge>
             ))}
           </div>
         </CardContent>
-        <CardFooter className="flex justify-between pt-0 pb-6 px-6">
+        <CardFooter className="flex justify-between pt-0 pb-6 px-6 mt-auto">
           {repoUrl && repoUrl !== "#" && (
             <Button
               variant="outline"
               size="sm"
               asChild
-              className="glass-button transition-all duration-300 hover:scale-105 h-9"
+              className="border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold transition-all duration-300 h-9 px-4 rounded-lg"
             >
               <a href={repoUrl} target="_blank" rel="noopener noreferrer">
                 Code
@@ -130,7 +130,7 @@ export function ProjectCard({
                 <Button
                   size="sm"
                   asChild={Boolean(demoUrl && demoUrl !== "#")}
-                  className="glass-button glow-hover text-white transition-all duration-300 hover:scale-105 h-9"
+                  className="bg-indigo-600 text-white hover:bg-indigo-700 shadow-md shadow-indigo-600/10 font-semibold transition-all duration-300 h-9 px-4 rounded-lg"
                   onClick={handleDemoClick}
                 >
                   {demoUrl && demoUrl !== "#" ? (

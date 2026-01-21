@@ -27,40 +27,43 @@ const PORTFOLIO_DATA = {
         other: ["System Design", "WCAG Accessibility", "SEO"]
     },
     projects: [
-        { title: "SCC Mobile Application (Flutter)", description: "Co-built a mobile application used by 31+ Swedish companies. Led frontend development using Flutter." },
-        { title: "PFH – Proactive For Her", description: "Modern healthcare platform for women built with React, Next.js, and Strapi." },
-        { title: "C.O.R.E", description: "Centralized Orchestration and Routing Engine - Won 1st Runner Up at TRON Agentic AI Hackathon." },
+        { title: "Sports Mobile Application (Flutter)", description: "Co-built a mobile application used by 31+ international companies. Led frontend development using Flutter." },
+        { title: "Healthcare Company Website", description: "Modern healthcare platform built with React, Next.js, and Strapi." },
+        { title: "C.O.R.E", description: "Centralized Orchestration and Routing Engine (It is a unified platform for multi agent orchestration built using langraph and MCP implementation)- Won 1st Runner Up at TRON Agentic AI Hackathon." },
         { title: "CMS Authoring Tool", description: "Designed Flutter Web frontend and Golang middleware for a CMS tool." },
-        { title: "IVF Access", description: "Built from scratch for Proactive For Her, delivering a specialized patient journey." },
-        { title: "Tarento Official Website", description: "Contributed to performance, SEO, and responsive design for Tarento's corporate site." }
+        { title: "Healthcare Company Website – Website Revamp", description: "Built from scratch, delivering a specialized patient journey for medical services." },
+        { title: "Corporate Website Enhancement", description: "Contributed to performance, SEO, and responsive design for a major corporate site." }
     ],
     education: [
         { degree: "B.Tech in Computer Science (8.67 CGPA)", institution: "Government Engineering College, Thrissur (2020-2024)" },
         { degree: "Higher Secondary (98.42%)", institution: "Municipal GHSS, Payyannur" }
     ],
     experiences: [
-        { role: "Software Engineer", company: "Tarento Group", period: "Oct 2024 - Present" },
+        { role: "Software Engineer", company: "A leading technology solutions firm", period: "Oct 2024 - Present" },
         { role: "Frontend Intern", company: "MetaShot", period: "July 2023 - Sept 2023" },
-        { role: "Web Developer", company: "ISTE-GECT", period: "July 2023 - May 2024" }
+        { role: "Web Developer", company: "Local Technical Society", period: "July 2023 - May 2024" }
     ],
     accomplishments: [
         "1st Runner Up - TRON Agentic AI Hackathon",
-        "Spot Award - Q2 FY26 & Q4 FY25",
-        "Awesome Addition to the Team - Q1 FY26",
+        "Multiple Spot Awards for technical excellence",
+        "Outstanding Newcomer recognition",
         "Carolyn Leighton Scholarship (WITI 2023)"
     ],
     contactInfo: {
         email: "256divyasree@gmail.com",
-        location: "Kannur, Kerala, India",
+        location: "Bengaluru, Karnataka, India",
     }
 };
 
 const SUGGESTED_QUESTIONS = [
     "Tell me about yourself",
-    "What are your technical skills?",
+    "What is your main expertise?",
     "Show me your projects",
     "Tell me about project C.O.R.E",
-    "What is your work experience?",
+    "Tell me about the Sports App",
+    "Tell me about the Healthcare projects",
+    "What is your tech stack?",
+    "What roles have you worked in?",
     "Awards and achievements",
     "How can I contact you?"
 ];
@@ -122,44 +125,58 @@ export const ChatBot = () => {
     const generateResponse = (query: string): string => {
         const q = query.toLowerCase();
 
+        // Expertise
+        if (q.includes('expertise') || q.includes('specialization') || q.includes('main skills')) {
+            return `Divyasree specializes in Frontend & Full Stack Development. Her core expertise lies in building scalable web and mobile applications using React, Next.js, and Flutter, supplemented by strong backend knowledge in Node.js, Java, and Golang.`;
+        }
+
+        // Skills & Tech Stack
+        if (q.includes('skill') || q.includes('tech stack') || q.includes('technology') || q.includes('what do you use') || q.includes('language') || q.includes('framework')) {
+            const languages = PORTFOLIO_DATA.skillsData.languages.join(', ');
+            const frameworks = PORTFOLIO_DATA.skillsData.frameworks.join(', ');
+            const tools = PORTFOLIO_DATA.skillsData.tools.join(', ');
+            return `Divyasree's Tech Stack includes:\n\n• Frontend: ${languages}\n• Backend/Frameworks: ${frameworks}\n• Databases & Tools: ${PORTFOLIO_DATA.skillsData.databases.join(', ')}, ${tools}\n• CMS: ${PORTFOLIO_DATA.skillsData.cloud.join(', ')}.`;
+        }
+
+        // Specific Project: C.O.R.E (High Priority)
+        if (q.includes('core') || q.includes('agentic ai') || q.includes('hackathon')) {
+            const coreProject = PORTFOLIO_DATA.projects.find(p => p.title.includes('C.O.R.E'));
+            if (coreProject) {
+                return `${coreProject.title}: ${coreProject.description}`;
+            }
+        }
+
+        // Specific Category: Sports App
+        if (q.includes('sports app') || q.includes('flutter app') || q.includes('mobile app')) {
+            const sportsProject = PORTFOLIO_DATA.projects.find(p => p.title.toLowerCase().includes('sports'));
+            if (sportsProject) {
+                return `The ${sportsProject.title} is a mobile application co-built using Flutter, currently live and serving 31+ international companies. Divyasree led the frontend development, creating an intuitive UX for tournament tracking and team management.`;
+            }
+        }
+
+        // Specific Category: Healthcare
+        if (q.includes('healthcare') || q.includes('patient journey') || q.includes('medical')) {
+            const healthcareProjects = PORTFOLIO_DATA.projects.filter(p => p.title.toLowerCase().includes('healthcare'));
+            if (healthcareProjects.length > 0) {
+                return `Divyasree has delivered multiple Healthcare Company Websites, including platforms built with React and Next.js. These projects featured specialized patient journeys, medical service management, and performance optimizations.`;
+            }
+        }
+
+        // Experience & Roles
+        if (q.includes('experience') || q.includes('work') || q.includes('job') || q.includes('role') || q.includes('position')) {
+            const currentPosition = PORTFOLIO_DATA.experiences[0];
+            const allRoles = PORTFOLIO_DATA.experiences.map(e => `• ${e.role} at ${e.company} (${e.period})`).join('\n');
+            return `Divyasree is currently a ${currentPosition.role} at ${currentPosition.company}.\n\nFull career overview:\n${allRoles}`;
+        }
+
         // Introduction & Identity
         if (q.includes('who are you') || q.includes('your name') || q.includes('who is divyasree')) {
             return `I'm an AI assistant representing Divyasree M. She is a ${PORTFOLIO_DATA.title} with a focus on delivering high-impact, production-grade applications.`;
         }
 
         // About / Summary
-        if (q.includes('about') || q.includes('tell me about') || q.includes('summary') || q.includes('background')) {
+        if (q.includes('about') || q.includes('summary') || q.includes('background') || q.includes('yourself')) {
             return PORTFOLIO_DATA.about;
-        }
-
-        // Skills & Tech Stack
-        if (q.includes('skill') || q.includes('tech stack') || q.includes('knowledge') || q.includes('what can you do') || q.includes('language') || q.includes('framework')) {
-            const languages = PORTFOLIO_DATA.skillsData.languages.join(', ');
-            const frameworks = PORTFOLIO_DATA.skillsData.frameworks.join(', ');
-            const tools = PORTFOLIO_DATA.skillsData.tools.join(', ');
-            return `Divyasree is proficient in: \n\n• Languages: ${languages}\n• Frameworks/Libs: ${frameworks}\n• Tools: ${tools}\n• Also experienced in: ${PORTFOLIO_DATA.skillsData.cloud.join(', ')}.`;
-        }
-
-        // Projects
-        if (q.includes('project') || q.includes('what have you built') || q.includes('portfolio') || q.includes('work highlights')) {
-            const projects = PORTFOLIO_DATA.projects.map(p => `• ${p.title}: ${p.description}`).join('\n');
-            return `Here are some key projects Divyasree has built:\n\n${projects}\n\nWould you like more details on any of these?`;
-        }
-
-        // Specific Project: C.O.R.E
-        if (q.includes('core') || q.includes('agentic ai') || q.includes('hackathon')) {
-            return "C.O.R.E (Centralized Orchestration and Routing Engine) is one of Divyasree's standout projects. It's an Agentic AI Platform that won 1st Runner Up at the TRON Hackathon. It unifies multi-purpose agents and LLMs into a scalable system.";
-        }
-
-        // Specific Project: SCC
-        if (q.includes('scc') || q.includes('mobile app') || q.includes('flutter')) {
-            return "The SCC Mobile Application is a Flutter-based app co-built by Divyasree. It's currently live and used by over 31 Swedish companies for tournaments, teams, and leaderboards.";
-        }
-
-        // Experience
-        if (q.includes('experience') || q.includes('work') || q.includes('where do you work') || q.includes('current job') || q.includes('intern')) {
-            const exp = PORTFOLIO_DATA.experiences.map(e => `• ${e.role} at ${e.company} (${e.period})`).join('\n');
-            return `Divyasree's professional journey includes:\n\n${exp}`;
         }
 
         // Education

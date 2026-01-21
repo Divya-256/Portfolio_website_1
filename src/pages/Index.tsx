@@ -41,29 +41,29 @@ const PORTFOLIO_DATA = {
   projects: [
     {
       id: "1",
-      title: "SCC Mobile Application (Flutter)",
-      description: "Co-built a mobile application from scratch, now live and used by 31+ Swedish companies. Led frontend development using Flutter, designing intuitive UX for tournaments, teams, leaderboards, challenges, quizzes, and profiles.",
+      title: "Sports Mobile Application (Flutter)",
+      description: "Co-built a mobile application from scratch, now live and used by 31+ international companies. Led frontend development using Flutter, designing intuitive UX for tournaments, teams, leaderboards, challenges, quizzes, and profiles.",
       tags: ["Flutter", "Firebase", "Hive", "REST APIs"],
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      demoUrl: "https://play.google.com/store/apps/details?id=com.tarento.scc&hl=en_IN",
+      demoUrl: "#",
       repoUrl: "#",
     },
     {
       id: "2",
-      title: "PFH – Proactive For Her (Healthcare)",
-      description: "Modern and responsive healthcare platform for women. Contributed to building and scaling the primary platform.",
+      title: "Healthcare Company Website",
+      description: "Developed a modern and responsive healthcare platform. Contributed to building and scaling the primary platform.",
       tags: ["React", "Next.js", "Strapi", "AWS"],
       imageUrl: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=2274&auto=format&fit=crop",
-      demoUrl: "https://proactiveforher.com/",
+      demoUrl: "#",
       repoUrl: "#",
     },
     {
       id: "6",
-      title: "IVF Access",
-      description: "Built the IVF Access website from scratch, delivering a specialized patient journey for fertility services.",
+      title: "Healthcare Company Website – Website Revamp",
+      description: "Led the complete website revamp for a healthcare company, delivering a specialized patient journey platform with a focus on seamless user experience.",
       tags: ["React", "Next.js", "Strapi", "Performance"],
       imageUrl: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop",
-      demoUrl: "https://ivfaccess.com/",
+      demoUrl: "#",
       repoUrl: "#",
     },
     {
@@ -87,11 +87,11 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "5",
-      title: "Tarento Official Website",
-      description: "Contributed to the development and enhancement of Tarento's official corporate website, focusing on performance, SEO, and responsive design.",
+      title: "Corporate Website Enhancement",
+      description: "Contributed to the development and enhancement of a major corporate website, focusing on performance, SEO, and responsive design.",
       tags: ["React", "Gatsby", "Strapi", "SEO"],
       imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      demoUrl: "https://www.tarento.com/",
+      demoUrl: "#",
       repoUrl: "#",
     },
     /* 
@@ -150,9 +150,9 @@ const PORTFOLIO_DATA = {
       period: "Oct 2024 -- Present",
       description: "Demonstrated end-to-end ownership across multiple client and internal projects, spanning web, mobile, CMS, and backend systems. Proactively identified gaps, improved system quality, and drove tasks to completion while collaborating with cross-functional teams.",
       achievements: [
-        "Led frontend development for SCC mobile app, now live and used by 31+ Swedish companies.",
-        "Built and delivered multiple accelerator pages (Snowflake, RAIN, PULZ, THOR, BOLT, LEAD) using JAMstack (Gatsby + Strapi).",
-        "Built the IVF Access website from scratch for Proactive For Her (PFH), delivering a modern healthcare platform.",
+        "Led frontend development for a sports mobile app now used by 31+ international companies.",
+        "Built and delivered multiple high-performance accelerator pages for various clients using JAMstack (Gatsby + Strapi).",
+        "Built multiple healthcare company websites from scratch, delivering modern and compliant user journeys.",
         "Designed and developed the complete Flutter Web frontend and Golang middleware for a CMS Authoring Tool.",
         "Improved responsiveness, accessibility (WCAG), and performance using Lighthouse audits."
       ],
@@ -318,19 +318,19 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "2",
-      title: "SCC Mobile App",
-      description: "Live mobile application used by 31+ Swedish companies for tournaments and activity tracking.",
+      title: "Sports Mobile App",
+      description: "Live mobile application used by 31+ international companies for tournaments and activity tracking.",
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      demoUrl: "https://play.google.com/store/apps/details?id=com.tarento.scc&hl=en_IN",
+      demoUrl: "#",
       category: "projects" as const,
       tags: ["Flutter", "Firebase", "Mobile"]
     },
     {
       id: "3",
-      title: "PFH - IVF Access",
-      description: "Modern healthcare platform built from scratch delivering responsive and compliant user journeys.",
+      title: "Healthcare Company Website",
+      description: "Modern healthcare platforms built from scratch delivering responsive and compliant user journeys.",
       imageUrl: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=2274&auto=format&fit=crop",
-      demoUrl: "https://proactiveforher.com/",
+      demoUrl: "#",
       category: "projects" as const,
       tags: ["React", "Next.js", "Strapi"]
     },
@@ -344,19 +344,19 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "7",
-      title: "Tarento Website",
-      description: "Official corporate website focusing on performance, SEO, and responsive technical architecture.",
+      title: "Corporate Website",
+      description: "Official corporate website enhancement focusing on performance, SEO, and responsive technical architecture.",
       imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      demoUrl: "https://www.tarento.com/",
+      demoUrl: "#",
       category: "projects" as const,
       tags: ["React", "Gatsby", "SEO"]
     },
     {
       id: "8",
-      title: "IVF Access",
-      description: "Specialized healthcare platform delivering a seamless patient journey for fertility services.",
+      title: "Healthcare Company Website – Website Revamp",
+      description: "Comprehensive website revamp for a healthcare provider, delivering a seamless patient journey for medical services.",
       imageUrl: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop",
-      demoUrl: "https://ivfaccess.com/",
+      demoUrl: "#",
       category: "projects" as const,
       tags: ["React", "Next.js", "Healthcare"]
     },
@@ -420,7 +420,7 @@ const PORTFOLIO_DATA = {
   ],
   contactInfo: {
     email: "256divyasree@gmail.com",
-    location: "Kannur, Kerala, India",
+    location: "Bengaluru, Karnataka, India",
   },
   socials: [
     { platform: "linkedin" as const, url: "https://www.linkedin.com/divya-256" },
@@ -442,6 +442,7 @@ const PORTFOLIO_DATA = {
 export default function PortfolioPage() {
   const projectsRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initialize AOS animation library
@@ -469,6 +470,10 @@ export default function PortfolioPage() {
     projectsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar
@@ -482,6 +487,7 @@ export default function PortfolioPage() {
         title={PORTFOLIO_DATA.title}
         description={PORTFOLIO_DATA.description}
         scrollToProjects={scrollToProjects}
+        scrollToContact={scrollToContact}
       />
 
       <SectionDivider />
@@ -534,7 +540,9 @@ export default function PortfolioPage() {
       <SectionDivider />
 
       {/* Contact section */}
-      <ContactSection contactInfo={PORTFOLIO_DATA.contactInfo} />
+      <div ref={contactRef}>
+        <ContactSection contactInfo={PORTFOLIO_DATA.contactInfo} />
+      </div>
 
       <Footer
         name={PORTFOLIO_DATA.name}

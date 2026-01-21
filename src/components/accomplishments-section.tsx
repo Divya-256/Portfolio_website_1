@@ -34,14 +34,14 @@ export function AccomplishmentsSection({ accomplishments, className }: Accomplis
   return (
     <section id="accomplishments" className={cn("py-20 px-6 relative overflow-hidden", className)}>
 
-      
+
       <div className="container max-w-4xl relative z-10">
-        <SectionHeading 
-          title="Accomplishments" 
+        <SectionHeading
+          title="Accomplishments"
           subtitle="Key achievements and recognition"
         />
-        
-        <motion.div 
+
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -56,21 +56,21 @@ export function AccomplishmentsSection({ accomplishments, className }: Accomplis
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="glass-card rounded-2xl p-6 hover:glow transition-all duration-300"
-              whileHover={{ 
-                y: -5, 
-                boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04)" 
+              whileHover={{
+                y: -5,
+                boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04)"
               }}
             >
               <div className="flex flex-col h-full">
-                <div className="mb-4 text-white glass-button rounded-xl p-4 w-fit glow">
+                <div className="mb-4 text-indigo-600 bg-slate-50 border border-slate-100 rounded-xl p-4 w-fit shadow-sm">
                   {getIcon(item.icon)}
                 </div>
-                
-                <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+
+                <h3 className="text-xl font-semibold mb-3 text-slate-900 group-hover:text-indigo-600 transition-colors duration-300">
                   {item.title}
                 </h3>
-                
-                <p className="text-muted-foreground flex-grow">
+
+                <p className="text-slate-600 flex-grow leading-relaxed">
                   {item.description}
                 </p>
               </div>

@@ -59,10 +59,10 @@ export function FeaturedSection({ featuredItems, className }: FeaturedSectionPro
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300",
+                "flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 font-medium text-sm",
                 activeTab === tab.id
-                  ? "glass-button glow text-white"
-                  : "glass hover:bg-white/[0.15] text-muted-foreground hover:text-white"
+                  ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/20"
+                  : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-black border border-slate-200/50"
               )}
             >
               {"icon" in tab && tab.icon && <tab.icon className="h-4 w-4" />}
@@ -88,39 +88,39 @@ export function FeaturedSection({ featuredItems, className }: FeaturedSectionPro
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     className={cn(
-                      "glass-card rounded-2xl overflow-hidden hover:glow transition-all duration-300 group flex flex-col h-full",
+                      "bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group flex flex-col h-full",
                       item.videoUrl && "cursor-pointer"
                     )}
                     whileHover={{ y: -5 }}
                   >
-                    <div className="relative aspect-video w-full overflow-hidden bg-black/20">
+                    <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
                       <img
                         src={item.imageUrl}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       {item.videoUrl && (
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
-                          <div className="w-12 h-12 rounded-full bg-primary/80 flex items-center justify-center glow">
-                            <Play className="h-6 w-6 text-white fill-white" />
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20 backdrop-blur-[2px]">
+                          <div className="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg">
+                            <Play className="h-6 w-6 fill-white" />
                           </div>
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                       <div className="absolute top-4 right-4">
-                        <span className="glass px-3 py-1 rounded-full text-xs text-white capitalize">
+                        <span className="bg-black text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
                           {item.category}
                         </span>
                       </div>
                     </div>
 
                     <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+                      <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">
                         {item.title}
                       </h3>
                       <div className="relative mb-4">
                         <p className={cn(
-                          "text-muted-foreground text-sm leading-relaxed transition-all duration-300",
+                          "text-slate-600 text-sm leading-relaxed transition-all duration-300",
                           !isExpanded && "line-clamp-2"
                         )}>
                           {item.description}
@@ -131,7 +131,7 @@ export function FeaturedSection({ featuredItems, className }: FeaturedSectionPro
                               e.stopPropagation();
                               toggleExpand(item.id);
                             }}
-                            className="text-xs text-primary mt-1 font-medium hover:underline flex items-center gap-1"
+                            className="text-xs text-indigo-600 mt-2 font-semibold hover:underline flex items-center gap-1"
                           >
                             {isExpanded ? "Show Less" : "Read More"}
                           </button>
@@ -143,7 +143,7 @@ export function FeaturedSection({ featuredItems, className }: FeaturedSectionPro
                           {item.tags.slice(0, 3).map((tag, i) => (
                             <span
                               key={i}
-                              className="glass bg-primary/20 text-primary px-2 py-1 rounded-md text-[10px] border border-primary/30"
+                              className="bg-slate-100 text-slate-700 px-2 py-1 rounded-md text-[10px] font-semibold border border-slate-200/50"
                             >
                               {tag}
                             </span>
