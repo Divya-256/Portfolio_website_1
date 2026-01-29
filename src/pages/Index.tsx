@@ -19,6 +19,7 @@ import awardQ2FY26 from "@/assets/awards/Q2FY26_Spot_Award.png";
 import awardAwesomeQ1FY26 from "@/assets/awards/Awesome_addition.png";
 import awardQ4FY25 from "@/assets/awards/Q4FY25_Spot_Award.png";
 import scholarshipImage from "@/assets/awards/carolyn_leighton.png";
+import debateAi from "@/assets/projects/debate_ai.png";
 
 import { useEffect } from "react";
 import AOS from "aos";
@@ -39,6 +40,15 @@ const PORTFOLIO_DATA = {
     other: ["System Design", "WCAG Accessibility", "SEO"]
   },
   projects: [
+    {
+      id: "0",
+      title: "AI Debate System",
+      description: "An interactive web application that leverages AI to simulate structured debates on any topic. Users can input a debate topic, and the system generates arguments, counterarguments, and insights in real-time using advanced AI models.",
+      tags: ["Python", "Gradio", "FastAPI", "Hugging Face", "OpenAI API"],
+      imageUrl: debateAi,
+      demoUrl: "https://divya256-ai-debate-system.hf.space/",
+      repoUrl: "https://github.com/Divya-256/AI_Debate_System",
+    },
     {
       id: "1",
       title: "Sports Mobile Application (Flutter)",
@@ -93,27 +103,7 @@ const PORTFOLIO_DATA = {
       imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
       demoUrl: "#",
       repoUrl: "#",
-    },
-    /* 
-    {
-      id: "5",
-      title: "CryptMaster",
-      description: "Built a cryptocurrency learning platform with a virtual trading environment and real-time market data integration.",
-      tags: ["React.js", "Node.js", "MongoDB", "Real-time Data"],
-      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      demoUrl: "#",
-      repoUrl: "#",
-    },
-    {
-      id: "6",
-      title: "IPfy",
-      description: "Developed a blockchain-enabled IP management platform with proof-of-work and marketplace capabilities.",
-      tags: ["React.js", "Blockchain", "IP Management", "Marketplace"],
-      imageUrl: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=2274&auto=format&fit=crop",
-      demoUrl: "#",
-      repoUrl: "#",
     }
-    */
   ],
   education: [
     {
@@ -307,6 +297,15 @@ const PORTFOLIO_DATA = {
     }
   ],
   featuredItems: [
+    {
+      id: "0",
+      title: "AI Debate System",
+      description: "An interactive web application that leverages AI to simulate structured debates on any topic with real-time arguments and counterarguments.",
+      imageUrl: debateAi,
+      demoUrl: "https://divya256-ai-debate-system.hf.space/",
+      category: "projects" as const,
+      tags: ["Python", "AI", "Gradio"]
+    },
     {
       id: "1",
       title: "C.O.R.E - Agentic AI Platform",
