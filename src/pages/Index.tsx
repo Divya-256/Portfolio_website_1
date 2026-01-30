@@ -20,6 +20,7 @@ import awardAwesomeQ1FY26 from "@/assets/awards/Awesome_addition.png";
 import awardQ4FY25 from "@/assets/awards/Q4FY25_Spot_Award.png";
 import scholarshipImage from "@/assets/awards/carolyn_leighton.png";
 import debateAi from "@/assets/projects/debate_ai.png";
+import financialResearcher from "@/assets/projects/financial_researcher.png";
 
 import { useEffect } from "react";
 import AOS from "aos";
@@ -42,6 +43,15 @@ const PORTFOLIO_DATA = {
   projects: [
     {
       id: "0",
+      title: "AI Financial Researcher",
+      description: "A multi-agent AI system using CrewAI that generates comprehensive research reports on any company using real-time web search. Features researcher and analyst agents working together with real-time data via Serper API.",
+      tags: ["CrewAI", "Groq", "Serper API", "Gradio", "Python"],
+      imageUrl: financialResearcher,
+      demoUrl: "https://divya256-ai-financial-researcher.hf.space/",
+      repoUrl: "https://github.com/Divya-256/financial_researcher",
+    },
+    {
+      id: "1",
       title: "AI Debate System",
       description: "An interactive web application that leverages AI to simulate structured debates on any topic. Users can input a debate topic, and the system generates arguments, counterarguments, and insights in real-time using advanced AI models.",
       tags: ["Python", "Gradio", "FastAPI", "Hugging Face", "OpenAI API"],
@@ -50,7 +60,7 @@ const PORTFOLIO_DATA = {
       repoUrl: "https://github.com/Divya-256/AI_Debate_System",
     },
     {
-      id: "1",
+      id: "2",
       title: "Sports Mobile Application (Flutter)",
       description: "Co-built a mobile application from scratch, now live and used by 31+ international companies. Led frontend development using Flutter, designing intuitive UX for tournaments, teams, leaderboards, challenges, quizzes, and profiles.",
       tags: ["Flutter", "Firebase", "Hive", "REST APIs"],
@@ -59,7 +69,7 @@ const PORTFOLIO_DATA = {
       repoUrl: "#",
     },
     {
-      id: "2",
+      id: "3",
       title: "Healthcare Company Website",
       description: "Developed a modern and responsive healthcare platform. Contributed to building and scaling the primary platform.",
       tags: ["React", "Next.js", "Strapi", "AWS"],
@@ -68,7 +78,7 @@ const PORTFOLIO_DATA = {
       repoUrl: "#",
     },
     {
-      id: "6",
+      id: "4",
       title: "Healthcare Company Website – Website Revamp",
       description: "Led the complete website revamp for a healthcare company, delivering a specialized patient journey platform with a focus on seamless user experience.",
       tags: ["React", "Next.js", "Strapi", "Performance"],
@@ -77,7 +87,7 @@ const PORTFOLIO_DATA = {
       repoUrl: "#",
     },
     {
-      id: "3",
+      id: "5",
       title: "C.O.R.E (TRON Agentic AI Hackathon)",
       description: "Centralized Orchestration and Routing Engine - A centralized AI orchestration and routing platform that unifies multi-purpose agents and LLMs into a governed, scalable enterprise intelligence system. Won 1st Runner Up.",
       tags: ["Agentic AI", "Orchestration", "LLMs", "Hackathon"],
@@ -87,7 +97,7 @@ const PORTFOLIO_DATA = {
       repoUrl: "#",
     },
     {
-      id: "4",
+      id: "6",
       title: "CMS Authoring Tool",
       description: "Designed and developed the complete Flutter Web frontend for a CMS Authoring Tool. Built Golang middleware with JWT-based authentication and role-based authorization.",
       tags: ["Flutter Web", "Golang", "Strapi", "JWT", "REST APIs"],
@@ -96,7 +106,7 @@ const PORTFOLIO_DATA = {
       repoUrl: "#",
     },
     {
-      id: "5",
+      id: "7",
       title: "Corporate Website Enhancement",
       description: "Contributed to the development and enhancement of a major corporate website, focusing on performance, SEO, and responsive design.",
       tags: ["React", "Gatsby", "Strapi", "SEO"],
@@ -314,6 +324,16 @@ const PORTFOLIO_DATA = {
       videoUrl: coreVideo,
       category: "projects" as const,
       tags: ["Agentic AI", "LLMs", "Orchestration"]
+    },
+    {
+      id: "1",
+      title: "AI Financial Researcher",
+      description: "A multi-agent AI system using CrewAI that generates comprehensive research reports on any company using real-time web search. Features researcher and analyst agents working together with real-time data via Serper API.",
+      tags: ["CrewAI", "Groq", "Serper API", "Gradio", "Python"],
+      imageUrl: financialResearcher,
+      demoUrl: "https://divya256-ai-financial-researcher.hf.space/",
+      repoUrl: "https://github.com/Divya-256/financial_researcher",
+      category: "projects" as const,
     },
     {
       id: "2",
