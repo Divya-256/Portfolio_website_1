@@ -805,7 +805,7 @@ Proactive problem-solving before being asked. Demonstrated senior-level analytic
 ## CONTACT & LINKS
 
 **Professional Profiles:**
-- LinkedIn: [linkedin.com/in/divya-256](https://www.linkedin.com/in/divya-256/)
+- LinkedIn: [linkedin.com/in/Divya-256](https://www.linkedin.com/in/Divya-256/)
 - GitHub: [github.com/divya-256](https://github.com/divya-256)
 - LeetCode: [leetcode.com/u/256divyasree](https://leetcode.com/u/256divyasree/)
 - GeeksforGeeks: [geeksforgeeks.org/profile/256divy0kii](https://www.geeksforgeeks.org/profile/256divy0kii)
