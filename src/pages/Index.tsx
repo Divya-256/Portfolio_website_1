@@ -152,7 +152,7 @@ const PORTFOLIO_DATA = {
       achievements: [
         "Led frontend development for a sports mobile app now used by 31+ international companies.",
         "Built and delivered multiple high-performance accelerator pages for various clients using JAMstack (Gatsby + Strapi).",
-        "Built multiple healthcare company websites from scratch, delivering modern and compliant user journeys.",
+        "Built ivf access website from scratch, delivering a modern and compliant healthcare user journey; provided support and maintenance for 2 additional client websites",
         "Designed and developed the complete Flutter Web frontend and Golang middleware for a CMS Authoring Tool.",
         "Improved responsiveness, accessibility (WCAG), and performance using Lighthouse audits."
       ],
@@ -219,53 +219,66 @@ const PORTFOLIO_DATA = {
   certifications: [
     {
       id: "1",
-      name: "Create and Manage Cloud Resources",
-      issuer: "Google Cloud",
-      date: "2024",
-      credentialId: "GC-CMR-001",
+      name: "AI Engineer Agentic Track: The Complete Agent & MCP Course",
+      issuer: "Ed Donner (Udemy)",
+      date: "2026",
       credentialUrl: "#",
-      description: "Foundational skills in creating and managing Google Cloud resources",
-      skills: ["Google Cloud", "Resource Management", "Cloud Computing"]
+      description: "30-day intensive covering 8 real-world projects: OpenAI Agents SDK, CrewAI, LangGraph, AutoGen, MCP Protocol",
+      skills: ["LangGraph", "CrewAI", "MCP", "OpenAI Agents SDK", "AutoGen"]
     },
     {
       id: "2",
-      name: "Perform Foundational Infrastructure Tasks in Google Cloud",
-      issuer: "Google Cloud",
-      date: "2024",
-      credentialId: "GC-PFI-002",
+      name: "Google AI Essentials",
+      issuer: "Coursera / Google",
+      date: "2025",
       credentialUrl: "#",
-      description: "Infrastructure management and deployment on Google Cloud Platform",
-      skills: ["Infrastructure", "Google Cloud", "DevOps"]
+      description: "Professional/Proctored certification covering AI fundamentals and practical applications",
+      skills: ["AI Fundamentals", "Google AI", "Machine Learning"]
     },
     {
       id: "3",
-      name: "Deploy to Kubernetes in Google Cloud",
-      issuer: "Google Cloud",
-      date: "2024",
-      credentialId: "GC-K8S-003",
+      name: "Python for Data Science, AI & Development",
+      issuer: "IBM",
+      date: "2025",
       credentialUrl: "#",
-      description: "Container orchestration and deployment using Kubernetes",
-      skills: ["Kubernetes", "Containers", "Google Cloud", "DevOps"]
+      description: "25-hour comprehensive course on Python for data science and AI development",
+      skills: ["Python", "Data Science", "AI Development", "NumPy", "Pandas"]
     },
     {
       id: "4",
-      name: "Engineer Data in Google Cloud",
-      issuer: "Google Cloud",
-      date: "2024",
-      credentialId: "GC-EDG-004",
+      name: "Developing AI Applications with Python and Flask",
+      issuer: "IBM",
+      date: "2025",
       credentialUrl: "#",
-      description: "Data engineering and processing on Google Cloud Platform",
-      skills: ["Data Engineering", "Google Cloud", "Big Data"]
+      description: "11-hour course on building and deploying AI-powered web applications",
+      skills: ["Python", "Flask", "AI Applications", "REST APIs"]
     },
     {
       id: "5",
-      name: "Responsive Website Development using HTML5, CSS3, JS and Bootstrap",
-      issuer: "Online Certification",
-      date: "2023",
-      credentialId: "RWD-005",
+      name: "Hands-on Introduction to Linux Commands and Shell Scripting",
+      issuer: "IBM",
+      date: "2025",
       credentialUrl: "#",
-      description: "Modern web development with responsive design principles",
-      skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive Design"]
+      description: "Practical Linux command line and shell scripting fundamentals",
+      skills: ["Linux", "Shell Scripting", "Bash", "Command Line"]
+    },
+    {
+      id: "6",
+      name: "Getting Started with Git and GitHub",
+      issuer: "Coursera",
+      date: "2024",
+      credentialUrl: "#",
+      description: "Version control fundamentals and collaborative development with Git and GitHub",
+      skills: ["Git", "GitHub", "Version Control", "Collaboration"]
+    },
+    {
+      id: "7",
+      name: "Introduction to Software Engineering",
+      issuer: "Coursera",
+      date: "2024",
+      credentialUrl: "#",
+      description: "Core software engineering principles, methodologies, and best practices",
+      skills: ["Software Engineering", "SDLC", "Agile", "Best Practices"]
     },
   ],
   accomplishments: [
@@ -314,7 +327,7 @@ const PORTFOLIO_DATA = {
       imageUrl: debateAi,
       demoUrl: "https://divya256-ai-debate-system.hf.space/",
       category: "projects" as const,
-      tags: ["Python", "AI", "Gradio"]
+      tags: ["Python", "AI", "Gradio", "Crew AI"]
     },
     {
       id: "1",
@@ -326,13 +339,12 @@ const PORTFOLIO_DATA = {
       tags: ["Agentic AI", "LLMs", "Orchestration"]
     },
     {
-      id: "1",
+      id: "1b",
       title: "AI Financial Researcher",
       description: "A multi-agent AI system using CrewAI that generates comprehensive research reports on any company using real-time web search. Features researcher and analyst agents working together with real-time data via Serper API.",
       tags: ["CrewAI", "Groq", "Serper API", "Gradio", "Python"],
       imageUrl: financialResearcher,
       demoUrl: "https://divya256-ai-financial-researcher.hf.space/",
-      repoUrl: "https://github.com/Divya-256/financial_researcher",
       category: "projects" as const,
     },
     {
@@ -379,14 +391,7 @@ const PORTFOLIO_DATA = {
       category: "projects" as const,
       tags: ["React", "Next.js", "Healthcare"]
     },
-    {
-      id: "5",
-      title: "Google Cloud Certifications",
-      description: "Multiple Google Cloud certifications including Kubernetes deployment and data engineering.",
-      imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
-      category: "certifications" as const,
-      tags: ["Google Cloud", "Kubernetes", "DevOps"]
-    },
+
     {
       id: "6",
       title: "Joint Convenor - ISTE GECT",

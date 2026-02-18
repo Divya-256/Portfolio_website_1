@@ -1,0 +1,84 @@
+Name: Divyasree M
+Title: Software Engineer | Frontend & Full Stack Developer
+Description: Proactive and adaptable Software Engineer with strong ownership and leadership qualities. Experienced in delivering end-to-end solutions across frontend, backend, mobile, CMS, and DevOps stacks.
+About: Proactive and adaptable Software Engineer with strong ownership and leadership qualities. Experienced in delivering end-to-end solutions across frontend, backend, mobile, CMS, and DevOps stacks. Known for quickly adapting to new technologies, solving complex problems, and delivering high-impact, production-grade applications while maintaining quality and timelines.
+
+Skills:
+- Languages: React, Next.js, Gatsby, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS
+- Frameworks: Java, Spring Boot, Node.js, NestJS (Basics), Python, Django, Golang (Gorilla Mux, GORM)
+- Databases: MySQL, PostgreSQL, MongoDB
+- Tools: Docker (Basics), GitHub Actions (CI/CD), AWS (Basics), Git, Agile/Scrum, Lighthouse Audits
+- Cloud/CMS: Strapi (Content Modeling, APIs, Publishing Workflows), Headless CMS Integrations
+- Other: System Design, WCAG Accessibility, SEO
+
+Experience:
+1. Software Engineer at Tarento Group (Oct 2024 -- Present)
+   - Technologies: React, Next.js, Gatsby, Strapi, Flutter, Golang, Java, Spring Boot, AWS, Docker
+   - Key Achievements:
+     * Led frontend development for a sports mobile app used by 31+ international companies.
+     * Built and delivered multiple high-performance accelerator pages for various clients using JAMstack.
+     * Built multiple healthcare company websites from scratch.
+     * Designed and developed the complete Flutter Web frontend and Golang middleware for a CMS Authoring Tool.
+     * Improved responsiveness, accessibility (WCAG), and performance.
+
+2. Frontend Developer Intern at MetaShot (July 2023 - September 2023)
+   - Technologies: React.js, JavaScript, CSS3, HTML5
+   - Key Achievements: Developed a website for carbon offsetting, implemented responsive design.
+
+3. Web Developer at ISTE-GECT (July 2023 - May 2024)
+   - Technologies: React.js, JavaScript, CSS3
+   - Developed website for ISTE-GECT club and NUEVA convention. Served as Joint Convenor and Tech Lead.
+
+4. Full Stack Developer at Mezmo Solutions (January 2023 - July 2023)
+   - Technologies: React.js, Node.js, MongoDB, Express.js
+   - Developed web app for Summer Startup Festival and Internship portal.
+
+5. Web Development Intern at Eztro-Tech Robotics (December 2021 - March 2022)
+   - Technologies: React.js, Django, JavaScript, CSS3
+   - Collaborated on robotics control interface development.
+
+Projects:
+1. AI Financial Researcher
+   - Tech: CrewAI, Groq, Serper API, Gradio, Python
+   - Description: A multi-agent AI system using CrewAI that generates comprehensive research reports on any company using real-time web search.
+   - Demo: https://divya256-ai-financial-researcher.hf.space/
+   - Repo: https://github.com/Divya-256/financial_researcher
+
+2. AI Debate System
+   - Tech: Python, Gradio, FastAPI, Hugging Face, OpenAI API
+   - Description: An interactive web application that leverages AI to simulate structured debates on any topic.
+   - Demo: https://divya256-ai-debate-system.hf.space/
+   - Repo: https://github.com/Divya-256/AI_Debate_System
+
+3. Sports Mobile Application (Flutter)
+   - Tech: Flutter, Firebase, Hive, REST APIs
+   - Description: Co-built a mobile application from scratch, now live and used by 31+ international companies. Led frontend development.
+
+4. Healthcare Company Website
+   - Tech: React, Next.js, Strapi, AWS
+   - Description: Developed a modern and responsive healthcare platform.
+
+5. C.O.R.E (TRON Agentic AI Hackathon) - 1st Runner Up
+   - Tech: Agentic AI, Orchestration, LLMs, Hackathon
+   - Description: Centralized Orchestration and Routing Engine - A centralized AI orchestration and routing platform. Won 1st Runner Up.
+
+6. CMS Authoring Tool
+   - Tech: Flutter Web, Golang, Strapi, JWT, REST APIs
+   - Description: Designed and developed the complete Flutter Web frontend for a CMS Authoring Tool and Golang middleware.
+
+Education:
+- B.Tech in Computer Science (CGPA: 8.67) form Government Engineering College, Thrissur (2020 - 2024)
+- Higher Secondary (98.42%) from Municipal GHSS, Payyannur (2017 - 2019)
+
+Awards & Accomplishments:
+- 1st Runner Up - TRON Agentic AI Hackathon (Dec 2025 - Jan 2026) for team C.O.R.E.
+- Spot Award - Q4 FY26 at Tarento for exceptional contributions.
+- Awesome Addition to the Team - Q1 FY26 at Tarento.
+- Spot Award - Q4 FY25 at Tarento.
+- Carolyn Leighton Scholarship (WITI 2023).
+
+Contact:
+- Email: 256divyasree@gmail.com
+- Location: Bengaluru, Karnataka, India
+- LinkedIn: https://www.linkedin.com/divya-256
+- GitHub: https://github.com/Divya-256/

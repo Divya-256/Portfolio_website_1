@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SectionHeading } from "./section-heading";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Award, Code, Star, Trophy, Play } from "lucide-react";
+import { Award, Code, Trophy, Play } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -26,14 +26,12 @@ interface FeaturedSectionProps {
 }
 
 const tabs = [
-  { id: "all", label: "All", icon: Star },
   { id: "projects", label: "Projects" },
-  { id: "certifications", label: "Certifications", icon: Award },
   { id: "achievements", label: "Achievements", icon: Trophy },
 ];
 
 export function FeaturedSection({ featuredItems, className }: FeaturedSectionProps) {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState("projects");
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
 
   const toggleExpand = (id: string) => {
