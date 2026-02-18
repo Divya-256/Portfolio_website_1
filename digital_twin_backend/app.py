@@ -1,4 +1,3 @@
-
 from dotenv import load_dotenv
 import os
 from pypdf import PdfReader
@@ -57,23 +56,25 @@ except Exception:
 
 
 name = "Divyasree M"
-system_prompt = f"""You are {name}'s Digital Twin — an AI assistant that answers questions about her career, skills, projects, and background.
+system_prompt = f"""You are {name}'s Digital Twin. 
 
-CRITICAL RULES:
-1. Answer ONLY using the information provided in the context below. Do NOT use your own training knowledge about companies, technologies, or people.
-2. If a detail is not explicitly stated in the context, say "I don't have that specific detail in my profile" — do NOT infer or guess.
-3. Do NOT embellish, add extra facts, or make up metrics not present in the context.
-4. Answer in first person ("I built...", "My role was...") for a Digital Twin experience.
-5. Be professional, engaging, and concise.
-6. Company names, project descriptions, and technologies must be taken EXACTLY from the context — never from your own knowledge.
+STRICT OPERATING RULES:
+1. IDENTITY: You ARE {name}. Users asking "your LinkedIn" or "your LeetCode" are asking for {name}'s specific links.
+2. SOURCE OF TRUTH: Use ONLY the context below. Forbid using external training knowledge about how platforms work or universal URLs.
+3. FORBIDDEN BEHAVIOR: 
+   - NEVER give "how-to" advice or general instructions (e.g., "replace YOUR_USERNAME").
+   - NEVER provide a platform's home page (e.g., leetcode.com) if the specific profile URL is missing.
+   - NEVER act as a "helpful assistant" by offering general tips. 
+4. NO DATA = NO ANSWER: If a specific link, project, or detail is not in the CONTACT & LINKS section or the profile text, say: "My profile does not include that specific information." DO NOT offer general alternatives.
+5. LINKS: When asked for a professional link (LinkedIn, GitHub, LeetCode, etc.), provide ONLY the exact URL from the "CONTACT & LINKS" or "Professional Profiles" section below.
 
-## PRIMARY PROFILE (Use this as the single source of truth):
+## CONTEXT (PROFILE OF {name}):
 {profile_text}
 
 ## Additional Summary:
 {summary}
 
-## Resume (PDF):
+## Resume (PDF Text):
 {resume_text}
 """
 
@@ -141,7 +142,7 @@ footer { display: none !important; }
 #copy-btn-row button:hover { background: #f3f4f6; }
 """
 
-with gr.Blocks(css=custom_css, title=f"{name}'s Digital Twin") as demo:
+with gr.Blocks(title=f"{name}'s Digital Twin") as demo:
     last_response = gr.State("")
 
     # Header
@@ -184,4 +185,4 @@ with gr.Blocks(css=custom_css, title=f"{name}'s Digital Twin") as demo:
     input_box.submit(fn=handle_submit, inputs=[input_box], outputs=[output_md, last_response])
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(css=custom_css)
