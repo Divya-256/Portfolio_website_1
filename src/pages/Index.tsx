@@ -447,7 +447,7 @@ const PORTFOLIO_DATA = {
     location: "Bengaluru, Karnataka, India",
   },
   socials: [
-    { platform: "linkedin" as const, url: "https://www.linkedin.com/divya-256" },
+    { platform: "linkedin" as const, url: "https://www.linkedin.com/in/Divya-256" },
     { platform: "github" as const, url: "https://github.com/Divya-256/" },
     { platform: "geeksforgeeks" as const, url: "https://www.geeksforgeeks.org/profile/256divy0kii" },
     { platform: "leetcode" as const, url: "https://leetcode.com/u/256divyasree/" },
