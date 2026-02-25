@@ -1,6 +1,6 @@
 ---
 title: "Divyasree's Digital Twin"
-emoji: "🤖"
+emoji: "robot"
 colorFrom: "blue"
 colorTo: "purple"
 sdk: gradio
