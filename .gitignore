@@ -27,3 +27,4 @@ dist-ssr
 .env
 .env.*
 digital_twin_backend/.env
+.vite/
