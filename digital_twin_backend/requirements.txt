@@ -1,4 +1,3 @@
 python-dotenv
 openai
 pypdf
-huggingface_hub<0.25.0
