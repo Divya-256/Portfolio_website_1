@@ -111,29 +111,17 @@ def chat_function(message, history):
                 model=model_id,
                 messages=messages,
                 max_tokens=2048,
-                stream=True,
             )
-            
-            partial_message = ""
-            for chunk in response:
-                if chunk.choices[0].delta.content:
-                    partial_message += chunk.choices[0].delta.content
-                    yield partial_message
-            return
+            return response.choices[0].message.content
         except Exception as e:
             err = str(e)
             if "429" in err or "404" in err or "rate limit" in err.lower() or "no endpoints" in err.lower():
                 continue
-            return f"Error communicating with AI: {err}"
-
-    yield "I'm currently experiencing high demand. Please try again in a moment!"
+    return "I'm currently experiencing high demand. Please try again in a moment!"
 
 def simple_chat(message: str) -> str:
     """Simple single-turn chat endpoint for the Gradio JS client."""
-    final_response = ""
-    for chunk in chat_function(message, []):
-        final_response = chunk
-    return final_response
+    return chat_function(message, [])
 
 EXAMPLE_QUESTIONS = [
     "Tell me about yourself",
@@ -194,9 +182,9 @@ with gr.Blocks(css=custom_css, title=f"{name}'s Digital Twin") as demo:
     output_md = gr.Markdown(elem_id="output-md", value="*Your answer will appear here...*")
 
     # Wire up submit
-    def handle_submit(message, *args):
-        for response in chat_function(message, []):
-            yield response, response
+    def handle_submit(message):
+        response = simple_chat(message)
+        return response, response
 
     submit_btn.click(fn=handle_submit, inputs=[input_box], outputs=[output_md, last_response])
     input_box.submit(fn=handle_submit, inputs=[input_box], outputs=[output_md, last_response])
