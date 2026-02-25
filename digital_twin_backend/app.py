@@ -110,20 +110,30 @@ def chat_function(message, history):
             response = client.chat.completions.create(
                 model=model_id,
                 messages=messages,
-                max_tokens=1024,
+                max_tokens=2048,
+                stream=True,
             )
-            return response.choices[0].message.content
+            
+            partial_message = ""
+            for chunk in response:
+                if chunk.choices[0].delta.content:
+                    partial_message += chunk.choices[0].delta.content
+                    yield partial_message
+            return
         except Exception as e:
             err = str(e)
             if "429" in err or "404" in err or "rate limit" in err.lower() or "no endpoints" in err.lower():
                 continue
             return f"Error communicating with AI: {err}"
 
-    return "I'm currently experiencing high demand. Please try again in a moment!"
+    yield "I'm currently experiencing high demand. Please try again in a moment!"
 
 def simple_chat(message: str) -> str:
     """Simple single-turn chat endpoint for the Gradio JS client."""
-    return chat_function(message, [])
+    final_response = ""
+    for chunk in chat_function(message, []):
+        final_response = chunk
+    return final_response
 
 EXAMPLE_QUESTIONS = [
     "Tell me about yourself",
@@ -133,12 +143,20 @@ EXAMPLE_QUESTIONS = [
 ]
 
 custom_css = """
-.gradio-container { max-width: 860px !important; margin: 0 auto !important; }
+.gradio-container { width: 100% !important; max-width: 860px !important; margin: 0 auto !important; }
 footer { display: none !important; }
-#output-md { min-height: 180px; padding: 1rem; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb; font-size: 0.97rem; line-height: 1.7; }
+#output-md { 
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding: 1rem; 
+    border-radius: 8px; 
+    border: 1px solid var(--border-color-primary, #e5e7eb); 
+    font-size: 0.97rem; 
+    line-height: 1.7; 
+}
 #copy-btn-row { display: flex; justify-content: flex-end; margin-top: 4px; }
-#copy-btn-row button { font-size: 0.8rem; padding: 4px 12px; border-radius: 6px; border: 1px solid #d1d5db; background: white; cursor: pointer; }
-#copy-btn-row button:hover { background: #f3f4f6; }
+#copy-btn-row button { font-size: 0.8rem; padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border-color-primary, #d1d5db); background: var(--button-secondary-background-fill, white); cursor: pointer; }
+#copy-btn-row button:hover { background: var(--button-secondary-background-fill-hover, #f3f4f6); }
 """
 
 with gr.Blocks(css=custom_css, title=f"{name}'s Digital Twin") as demo:
@@ -176,9 +194,9 @@ with gr.Blocks(css=custom_css, title=f"{name}'s Digital Twin") as demo:
     output_md = gr.Markdown(elem_id="output-md", value="*Your answer will appear here...*")
 
     # Wire up submit
-    def handle_submit(message):
-        response = simple_chat(message)
-        return response, response
+    def handle_submit(message, *args):
+        for response in chat_function(message, []):
+            yield response, response
 
     submit_btn.click(fn=handle_submit, inputs=[input_box], outputs=[output_md, last_response])
     input_box.submit(fn=handle_submit, inputs=[input_box], outputs=[output_md, last_response])

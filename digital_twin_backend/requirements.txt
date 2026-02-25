@@ -1,4 +1,4 @@
 python-dotenv
 openai
 pypdf
-gradio==4.44.1
+huggingface_hub<0.25.0
